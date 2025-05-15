@@ -1,15 +1,49 @@
 # GSTR-1 JSON to Excel Converter
 
-A tool to convert GSTR-1 JSON files (downloaded from GST Portal) into Excel spreadsheets with multiple sheets.
+A tool to convert **GSTR-1 JSON files** (downloaded from the GST Portal) into **Excel spreadsheets with multiple sheets**, making it easy to analyze and share data.
 
-## Features
-- Converts B2B, B2C, Export, HSN, CDN, and Document Issue sections
-- Calculates missing invoice values
-- No installation needed – just upload and download!
+This project includes:
+- A **Python script** to convert GSTR-1 JSON to Excel.
+- A **Streamlit web app** so users can upload JSON files via a browser and download Excel files without installing Python.
 
-## How to Use
-1. Upload your GSTR-1 JSON file
-2. Download the Excel file with all sections neatly organized
+---
 
-## Deployed on Streamlit
-👉 [Live Demo](https://your-streamlit-app.streamlit.app/ )
+## 📄 Features
+
+✅ Converts the following GSTR-1 sections into separate Excel sheets:
+- B2B Invoices
+- B2C Large Invoices
+- B2C Small Summary
+- Export Invoices
+- Credit/Debit Notes (Registered)
+- Credit/Debit Notes (Unregistered)
+- HSN/SAC Summary
+- Document Issued Summary
+
+✅ Automatically calculates missing values like:
+- Taxable Value
+- Invoice Value
+- Total IGST / CGST / SGST / CESS
+
+✅ User-friendly **web interface** using **Streamlit**
+
+---
+
+## 🔧 How It Works
+
+The script parses the GSTR-1 JSON file, extracts invoice-level data from each section, organizes them into structured tables, and writes all of them into a single Excel file with one sheet per section.
+
+---
+
+## 🚀 How to Use (Local Version)
+
+### Prerequisites
+- Python 3.8+
+- `pandas`, `openpyxl`
+
+### Steps
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Alliswell-tech/gstr1-converter-app.git 
+   cd gstr1-converter-app
